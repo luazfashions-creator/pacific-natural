@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { Icon } from '@/components/ui/Icon';
+import { SectionReveal, StaggerReveal, StaggerItem } from '@/lib/animations';
 
 const pillars = [
     {
@@ -29,7 +32,7 @@ export function ThreePillars() {
     return (
         <section id="coaching" className="py-24 lg:py-32 bg-background-alt/50">
             <div className="max-w-7xl mx-auto px-6 lg:px-10">
-                <div className="text-center max-w-2xl mx-auto mb-20">
+                <SectionReveal className="text-center max-w-2xl mx-auto mb-20">
                     <h2 className="text-4xl lg:text-5xl font-semibold text-slate-900 mb-6">
                         The Three Pillars of Longevity
                     </h2>
@@ -37,15 +40,15 @@ export function ThreePillars() {
                         Our holistic ecosystem addresses wellness from every angle: internal biology, personalized
                         guidance, and external resilience.
                     </p>
-                </div>
+                </SectionReveal>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <StaggerReveal className="grid md:grid-cols-3 gap-8" threshold={0.1}>
                     {pillars.map((pillar) => (
-                        <div
+                        <StaggerItem
                             key={pillar.title}
-                            className="group bg-white p-8 rounded-xl border border-slate-100 hover:shadow-2xl transition-all duration-300"
+                            className="group bg-white p-8 rounded-xl border border-slate-100 hover:shadow-2xl transition-shadow duration-300"
                         >
-                            <div className="w-16 h-16 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform">
+                            <div className="w-16 h-16 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform duration-300">
                                 <Icon name={pillar.icon} className="text-4xl" />
                             </div>
                             <h3 className="text-2xl font-bold mb-4">{pillar.title}</h3>
@@ -56,9 +59,9 @@ export function ThreePillars() {
                             >
                                 {pillar.cta} <Icon name="arrow_forward" />
                             </Link>
-                        </div>
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerReveal>
             </div>
         </section>
     );

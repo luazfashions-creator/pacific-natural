@@ -1,4 +1,7 @@
+'use client';
+
 import { PhilosophyCard } from '@/components/ui/PhilosophyCard';
+import { SectionReveal, StaggerReveal } from '@/lib/animations';
 
 const philosophyItems = [
     {
@@ -26,17 +29,17 @@ export function Philosophy() {
         <section className="py-24 lg:py-32 bg-white">
             <div className="max-w-7xl mx-auto px-6 lg:px-10">
                 {/* Section header */}
-                <div className="text-center max-w-2xl mx-auto mb-20">
+                <SectionReveal className="text-center max-w-2xl mx-auto mb-20">
                     <span className="uppercase tracking-[0.3em] text-primary text-xs font-medium mb-4 block">
                         Our Philosophy
                     </span>
                     <h2 className="text-4xl lg:text-5xl font-medium text-slate-900 tracking-tight">
                         What We Stand For
                     </h2>
-                </div>
+                </SectionReveal>
 
-                {/* Philosophy cards — alternating layout */}
-                <div className="flex flex-col gap-20 lg:gap-28">
+                {/* Philosophy cards — staggered alternating layout */}
+                <StaggerReveal className="flex flex-col gap-20 lg:gap-28" threshold={0.08}>
                     {philosophyItems.map((item, index) => (
                         <PhilosophyCard
                             key={item.title}
@@ -44,9 +47,10 @@ export function Philosophy() {
                             title={item.title}
                             description={item.description}
                             reverse={index % 2 !== 0}
+                            index={index}
                         />
                     ))}
-                </div>
+                </StaggerReveal>
             </div>
         </section>
     );
