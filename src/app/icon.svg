@@ -1,0 +1,8 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pacific Naturals icon">
+  <rect width="512" height="512" rx="104" fill="#F2F4EF"/>
+  <circle cx="256" cy="256" r="170" fill="#5A675B"/>
+  <path d="M256 172c22 26 36 50 42 72-14-9-28-13-42-13s-28 4-42 13c6-22 20-46 42-72z" fill="#FAFAF7"/>
+  <path d="M184 287c22-21 45-33 72-35-10 16-15 31-15 45 0 13 5 27 15 42-27-2-50-14-72-35z" fill="#FAFAF7"/>
+  <path d="M328 287c-22-21-45-33-72-35 10 16 15 31 15 45 0 13-5 27-15 42 27-2 50-14 72-35z" fill="#FAFAF7"/>
+  <circle cx="256" cy="288" r="20" fill="#FAFAF7"/>
+</svg>
