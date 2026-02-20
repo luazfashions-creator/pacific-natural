@@ -36,9 +36,9 @@ export function FilterSidebar({ className }: FilterSidebarProps) {
                                 onChange={() =>
                                     setSelectedCategory(selectedCategory === cat ? null : cat)
                                 }
-                                className="appearance-none w-4 h-4 rounded border-2 border-slate-300 checked:bg-primary checked:border-primary transition-all"
+                                className="appearance-none w-4 h-4 rounded border-2 border-border checked:bg-primary checked:border-primary transition-all"
                             />
-                            <span className="text-sm text-slate-600 group-hover:text-slate-900 transition-colors">
+                            <span className="text-sm text-text-secondary group-hover:text-text-primary transition-colors">
                                 {cat}
                             </span>
                         </label>
@@ -79,7 +79,7 @@ export function FilterSidebar({ className }: FilterSidebarProps) {
                     defaultValue="70"
                     className="w-full accent-primary"
                 />
-                <div className="flex justify-between text-xs text-slate-400 mt-2">
+                <div className="flex justify-between text-xs text-muted mt-2">
                     <span>€0</span>
                     <span>€100+</span>
                 </div>
@@ -90,7 +90,7 @@ export function FilterSidebar({ className }: FilterSidebarProps) {
                 <h3 className="text-xs font-bold uppercase tracking-widest text-primary mb-4">
                     Minimum Rating
                 </h3>
-                <div className="flex gap-1 text-amber-400 cursor-pointer">
+                <div className="flex gap-1 text-accent-warm cursor-pointer">
                     {Array.from({ length: 5 }, (_, i) => (
                         <Icon key={i} name="star" filled className="text-xl" />
                     ))}

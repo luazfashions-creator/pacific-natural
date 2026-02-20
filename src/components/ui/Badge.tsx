@@ -10,7 +10,7 @@ export function Badge({ children, variant = 'primary', className }: BadgeProps) 
     const variants = {
         primary: 'bg-primary text-white',
         outline: 'bg-primary/10 text-primary border border-primary/20',
-        light: 'bg-white/90 text-primary',
+        light: 'bg-surface-2 text-primary border border-border',
     };
 
     return (

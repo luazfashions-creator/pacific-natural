@@ -53,11 +53,11 @@ export function ScienceSection() {
 
                 {/* Text content */}
                 <SectionReveal className="order-1 lg:order-2 space-y-8">
-                    <h2 className="text-4xl lg:text-5xl font-semibold text-slate-900 leading-tight">
+                    <h2 className="text-4xl lg:text-5xl font-semibold text-text-primary leading-tight">
                         Science Meets{' '}
                         <span className="text-primary italic font-light">Transparency</span>
                     </h2>
-                    <p className="text-slate-600 text-lg leading-relaxed">
+                    <p className="text-text-secondary text-lg leading-relaxed">
                         We don&apos;t believe in &quot;secret blends.&quot; Our team of longevity researchers,
                         pharmacists, and herbalists publish the clinical backing for every ingredient we use.
                     </p>
@@ -71,7 +71,7 @@ export function ScienceSection() {
                                     />
                                     <div>
                                         <h4 className="font-bold">Third-Party Verification</h4>
-                                        <p className="text-sm text-slate-500">
+                                        <p className="text-sm text-text-secondary">
                                             Every batch is tested by ISO-certified labs for heavy metals and purity.
                                         </p>
                                     </div>
@@ -85,7 +85,7 @@ export function ScienceSection() {
                                     />
                                     <div>
                                         <h4 className="font-bold">Cellular Synergy</h4>
-                                        <p className="text-sm text-slate-500">
+                                        <p className="text-sm text-text-secondary">
                                             Formulations designed to maximize mitochondrial function and DNA resilience.
                                         </p>
                                     </div>

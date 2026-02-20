@@ -221,7 +221,7 @@ export default function QuizPage() {
     /* ─── Analyzing State ─── */
     if (isAnalyzing) {
         return (
-            <div className="min-h-screen bg-background-light flex items-center justify-center">
+            <div className="min-h-screen bg-background flex items-center justify-center">
                 <div className="text-center space-y-8 max-w-md px-6">
                     <div className="relative w-24 h-24 mx-auto">
                         <div className="absolute inset-0 rounded-full border-4 border-primary/20" />
@@ -231,8 +231,8 @@ export default function QuizPage() {
                         </div>
                     </div>
                     <div>
-                        <h2 className="text-2xl font-extrabold text-slate-900 mb-3">Analyzing Your Profile</h2>
-                        <p className="text-slate-500">
+                        <h2 className="text-2xl font-extrabold text-text-primary mb-3">Analyzing Your Profile</h2>
+                        <p className="text-text-secondary">
                             Our AI is cross-referencing your answers with clinical longevity research to build
                             your personalized protocol...
                         </p>
@@ -258,9 +258,9 @@ export default function QuizPage() {
         const goals = (answers.goals as string[]) || [];
 
         return (
-            <div className="min-h-screen bg-background-light">
+            <div className="min-h-screen bg-background">
                 {/* Header */}
-                <div className="bg-white border-b border-primary/10 py-5">
+                <div className="bg-surface border-b border-primary/10 py-5">
                     <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
                         <Link href="/" className="flex items-center gap-3 text-primary">
                             <svg className="w-6 h-6" fill="none" viewBox="0 0 48 48">
@@ -276,8 +276,8 @@ export default function QuizPage() {
 
                 <div className="max-w-5xl mx-auto px-6 py-16">
                     {/* Score Card */}
-                    <div className="bg-gradient-to-br from-primary to-primary-light rounded-2xl p-10 lg:p-16 text-white mb-16 relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+                    <div className="bg-gradient-to-br from-primary to-primary-hover rounded-2xl p-10 lg:p-16 text-white mb-16 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-80 h-80 bg-surface/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
                         <div className="relative z-10">
                             <div className="flex items-center gap-3 mb-6">
                                 <Icon name="verified" className="text-2xl" />
@@ -294,19 +294,19 @@ export default function QuizPage() {
                             </p>
 
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-                                <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
+                                <div className="bg-surface/10 backdrop-blur rounded-xl p-4 text-center">
                                     <span className="text-3xl font-extrabold">{recommended.length}</span>
                                     <p className="text-xs text-white/70 mt-1">Supplements</p>
                                 </div>
-                                <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
+                                <div className="bg-surface/10 backdrop-blur rounded-xl p-4 text-center">
                                     <span className="text-3xl font-extrabold">{goals.length}</span>
                                     <p className="text-xs text-white/70 mt-1">Goals Targeted</p>
                                 </div>
-                                <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
+                                <div className="bg-surface/10 backdrop-blur rounded-xl p-4 text-center">
                                     <span className="text-3xl font-extrabold">98%</span>
                                     <p className="text-xs text-white/70 mt-1">Bio-Availability</p>
                                 </div>
-                                <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
+                                <div className="bg-surface/10 backdrop-blur rounded-xl p-4 text-center">
                                     <span className="text-3xl font-extrabold">
                                         {formatPrice(recommended.reduce((sum, p) => sum + p.price * 0.85, 0))}
                                     </span>
@@ -317,20 +317,20 @@ export default function QuizPage() {
                     </div>
 
                     {/* Recommended Products */}
-                    <h2 className="text-3xl font-extrabold text-slate-900 mb-2">Your Recommended Stack</h2>
-                    <p className="text-slate-500 mb-10">Hand-picked for your biology, goals, and lifestyle.</p>
+                    <h2 className="text-3xl font-extrabold text-text-primary mb-2">Your Recommended Stack</h2>
+                    <p className="text-text-secondary mb-10">Hand-picked for your biology, goals, and lifestyle.</p>
 
                     <div className="grid gap-6">
                         {recommended.map((product, idx) => (
                             <div
                                 key={product.id}
-                                className="bg-white rounded-xl border border-slate-100 p-6 lg:p-8 flex flex-col sm:flex-row gap-6 items-start hover:shadow-xl transition-all"
+                                className="bg-surface rounded-xl border border-border p-6 lg:p-8 flex flex-col sm:flex-row gap-6 items-start hover:shadow-xl transition-all"
                             >
                                 <div className="flex items-center gap-4 sm:gap-6 flex-1 min-w-0">
                                     <div className="w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-bold flex-shrink-0">
                                         {idx + 1}
                                     </div>
-                                    <div className="w-20 h-20 rounded-lg bg-slate-100 overflow-hidden flex-shrink-0 relative">
+                                    <div className="w-20 h-20 rounded-lg bg-surface-2 overflow-hidden flex-shrink-0 relative">
                                         <Image
                                             src={product.image}
                                             alt={product.name}
@@ -340,8 +340,8 @@ export default function QuizPage() {
                                         />
                                     </div>
                                     <div className="flex-1 min-w-0">
-                                        <h3 className="font-bold text-lg text-slate-900">{product.name}</h3>
-                                        <p className="text-sm text-slate-500 line-clamp-2">{product.description}</p>
+                                        <h3 className="font-bold text-lg text-text-primary">{product.name}</h3>
+                                        <p className="text-sm text-text-secondary line-clamp-2">{product.description}</p>
                                         <div className="flex flex-wrap gap-1.5 mt-2">
                                             {product.tags.slice(0, 3).map((tag) => (
                                                 <span
@@ -358,7 +358,7 @@ export default function QuizPage() {
                                     <span className="text-2xl font-extrabold text-primary">{formatPrice(product.price)}</span>
                                     <Link
                                         href={`/products/${product.slug}`}
-                                        className="bg-primary text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 whitespace-nowrap"
+                                        className="bg-primary text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-primary-hover transition-all shadow-lg shadow-primary/20 whitespace-nowrap"
                                     >
                                         View Product
                                     </Link>
@@ -371,12 +371,12 @@ export default function QuizPage() {
                     <div className="mt-16 text-center space-y-4">
                         <Link
                             href="/products"
-                            className="inline-flex items-center gap-2 bg-primary text-white px-10 py-4 rounded-lg font-bold text-lg shadow-xl shadow-primary/20 hover:bg-primary/90 transition-all"
+                            className="inline-flex items-center gap-2 bg-primary text-white px-10 py-4 rounded-lg font-bold text-lg shadow-xl shadow-primary/20 hover:bg-primary-hover transition-all"
                         >
                             <Icon name="shopping_cart" />
                             Shop Your Protocol
                         </Link>
-                        <p className="text-sm text-slate-400">
+                        <p className="text-sm text-muted">
                             Or{' '}
                             <button
                                 onClick={() => {
@@ -397,9 +397,9 @@ export default function QuizPage() {
 
     /* ─── Quiz Steps ─── */
     return (
-        <div className="min-h-screen bg-background-light flex flex-col">
+        <div className="min-h-screen bg-background flex flex-col">
             {/* Header */}
-            <div className="bg-white border-b border-primary/10 py-5">
+            <div className="bg-surface border-b border-primary/10 py-5">
                 <div className="max-w-3xl mx-auto px-6 flex items-center justify-between">
                     <Link href="/" className="flex items-center gap-3 text-primary">
                         <svg className="w-6 h-6" fill="none" viewBox="0 0 48 48">
@@ -407,16 +407,16 @@ export default function QuizPage() {
                         </svg>
                         <span className="text-lg font-extrabold tracking-tight">Pacific Naturals</span>
                     </Link>
-                    <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                    <span className="text-xs font-bold uppercase tracking-widest text-muted">
                         Step {currentStep + 1} of {totalSteps}
                     </span>
                 </div>
             </div>
 
             {/* Progress bar */}
-            <div className="bg-white">
+            <div className="bg-surface">
                 <div className="max-w-3xl mx-auto px-6">
-                    <div className="h-1 bg-slate-100 rounded-full overflow-hidden">
+                    <div className="h-1 bg-surface-2 rounded-full overflow-hidden">
                         <div
                             className="h-full bg-primary rounded-full transition-all duration-500 ease-out"
                             style={{ width: `${progress}%` }}
@@ -429,10 +429,10 @@ export default function QuizPage() {
             <div className="flex-1 flex items-center justify-center py-16">
                 <div className="max-w-2xl mx-auto px-6 w-full">
                     <div className="mb-10">
-                        <h1 className="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-3">
+                        <h1 className="text-3xl lg:text-4xl font-extrabold text-text-primary mb-3">
                             {question.title}
                         </h1>
-                        <p className="text-slate-500 text-lg">{question.subtitle}</p>
+                        <p className="text-text-secondary text-lg">{question.subtitle}</p>
                     </div>
 
                     {/* ── Single select ── */}
@@ -446,7 +446,7 @@ export default function QuizPage() {
                                         onClick={() => handleSingle(opt.value)}
                                         className={`flex items-center gap-4 p-5 rounded-xl border-2 text-left transition-all ${selected
                                                 ? 'border-primary bg-primary/5 shadow-lg shadow-primary/10'
-                                                : 'border-slate-200 bg-white hover:border-primary/30 hover:shadow-md'
+                                                : 'border-border bg-surface hover:border-primary/30 hover:shadow-md'
                                             }`}
                                     >
                                         {opt.icon && (
@@ -457,7 +457,7 @@ export default function QuizPage() {
                                                 <Icon name={opt.icon} />
                                             </div>
                                         )}
-                                        <span className="font-bold text-slate-800">{opt.label}</span>
+                                        <span className="font-bold text-text-primary">{opt.label}</span>
                                         {selected && (
                                             <Icon name="check_circle" className="ml-auto text-primary text-xl" filled />
                                         )}
@@ -479,7 +479,7 @@ export default function QuizPage() {
                                         onClick={() => handleMulti(opt.value)}
                                         className={`flex items-center gap-3 p-4 rounded-xl border-2 text-left transition-all ${selected
                                                 ? 'border-primary bg-primary/5 shadow-lg shadow-primary/10'
-                                                : 'border-slate-200 bg-white hover:border-primary/30'
+                                                : 'border-border bg-surface hover:border-primary/30'
                                             }`}
                                     >
                                         {opt.icon && (
@@ -490,7 +490,7 @@ export default function QuizPage() {
                                                 <Icon name={opt.icon} />
                                             </div>
                                         )}
-                                        <span className="font-semibold text-sm text-slate-800">{opt.label}</span>
+                                        <span className="font-semibold text-sm text-text-primary">{opt.label}</span>
                                         {selected && (
                                             <Icon name="check_circle" className="ml-auto text-primary text-lg" filled />
                                         )}
@@ -507,7 +507,7 @@ export default function QuizPage() {
                                 <span className="text-7xl font-extrabold text-primary">
                                     {(answers[question.id] as number) || question.min}
                                 </span>
-                                <span className="text-2xl text-slate-400 ml-2">{question.unit}</span>
+                                <span className="text-2xl text-muted ml-2">{question.unit}</span>
                             </div>
                             <input
                                 type="range"
@@ -519,7 +519,7 @@ export default function QuizPage() {
                                 }
                                 className="w-full accent-primary h-2 cursor-pointer"
                             />
-                            <div className="flex justify-between text-sm text-slate-400">
+                            <div className="flex justify-between text-sm text-muted">
                                 <span>{question.min} {question.unit}</span>
                                 <span>{question.max} {question.unit}</span>
                             </div>
@@ -535,7 +535,7 @@ export default function QuizPage() {
                             }
                             placeholder={question.placeholder}
                             rows={4}
-                            className="w-full px-6 py-4 rounded-xl border-2 border-slate-200 bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none text-slate-800 placeholder:text-slate-400"
+                            className="w-full px-6 py-4 rounded-xl border-2 border-border bg-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none text-text-primary placeholder:text-muted"
                         />
                     )}
 
@@ -544,7 +544,7 @@ export default function QuizPage() {
                         <button
                             onClick={handleBack}
                             disabled={currentStep === 0}
-                            className="flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-slate-600 hover:bg-white hover:shadow transition-all disabled:opacity-30 disabled:pointer-events-none"
+                            className="flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-text-secondary hover:bg-surface hover:shadow transition-all disabled:opacity-30 disabled:pointer-events-none"
                         >
                             <Icon name="arrow_back" />
                             Back
@@ -553,7 +553,7 @@ export default function QuizPage() {
                         <button
                             onClick={handleNext}
                             disabled={!canProceed()}
-                            className="flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-lg font-bold shadow-xl shadow-primary/20 hover:bg-primary/90 transition-all disabled:opacity-40 disabled:pointer-events-none"
+                            className="flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-lg font-bold shadow-xl shadow-primary/20 hover:bg-primary-hover transition-all disabled:opacity-40 disabled:pointer-events-none"
                         >
                             {currentStep === totalSteps - 1 ? 'Get My Protocol' : 'Continue'}
                             <Icon name={currentStep === totalSteps - 1 ? 'biotech' : 'arrow_forward'} />

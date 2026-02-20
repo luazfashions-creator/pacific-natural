@@ -14,7 +14,7 @@ export function StarRating({ rating, size = 'sm', showCount, count }: StarRating
 
     return (
         <div className="flex items-center gap-1">
-            <div className="flex text-amber-400">
+            <div className="flex text-accent-warm">
                 {Array.from({ length: fullStars }, (_, i) => (
                     <Icon key={`full-${i}`} name="star" className={sizeClass} filled />
                 ))}
@@ -24,7 +24,7 @@ export function StarRating({ rating, size = 'sm', showCount, count }: StarRating
                 ))}
             </div>
             {showCount && count !== undefined && (
-                <span className="text-[10px] font-bold text-slate-400">({count})</span>
+                <span className="text-[10px] font-bold text-muted">({count})</span>
             )}
         </div>
     );

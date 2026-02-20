@@ -16,12 +16,12 @@ export default function ProductsPage() {
 
             <div className="flex items-start justify-between mb-12">
                 <div>
-                    <h1 className="text-4xl font-extrabold text-slate-900 mb-2">Supplements Collection</h1>
-                    <p className="text-slate-500">{products.length} Products</p>
+                    <h1 className="text-4xl font-extrabold text-text-primary mb-2">Supplements Collection</h1>
+                    <p className="text-text-secondary">{products.length} Products</p>
                 </div>
-                <div className="hidden md:flex items-center gap-3 text-sm text-slate-500">
+                <div className="hidden md:flex items-center gap-3 text-sm text-text-secondary">
                     <span>Sort by:</span>
-                    <select className="bg-transparent font-bold text-slate-900 border-none focus:outline-none cursor-pointer">
+                    <select className="bg-transparent font-bold text-text-primary border-none focus:outline-none cursor-pointer">
                         <option>Best Selling</option>
                         <option>Price: Low to High</option>
                         <option>Price: High to Low</option>

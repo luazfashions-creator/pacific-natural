@@ -26,19 +26,19 @@ export function FeaturedProducts() {
             <SectionReveal className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col gap-12">
                 <div className="flex items-end justify-between">
                     <div>
-                        <h2 className="text-4xl lg:text-5xl font-semibold text-slate-900 mb-4">Daily Essentials</h2>
-                        <p className="text-slate-600">Our most requested foundational formulations.</p>
+                        <h2 className="text-4xl lg:text-5xl font-semibold text-text-primary mb-4">Daily Essentials</h2>
+                        <p className="text-text-secondary">Our most requested foundational formulations.</p>
                     </div>
                     <div className="flex gap-2">
                         <button
                             onClick={() => scroll('left')}
-                            className="btn-icon w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                            className="btn-icon w-12 h-12 rounded-full border border-border bg-transparent flex items-center justify-center text-text-primary hover:bg-surface-2 transition-all"
                         >
                             <Icon name="chevron_left" />
                         </button>
                         <button
                             onClick={() => scroll('right')}
-                            className="btn-icon w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                            className="btn-icon w-12 h-12 rounded-full border border-border bg-transparent flex items-center justify-center text-text-primary hover:bg-surface-2 transition-all"
                         >
                             <Icon name="chevron_right" />
                         </button>

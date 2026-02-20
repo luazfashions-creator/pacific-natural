@@ -41,10 +41,10 @@ export function PhilosophyCard({ image, title, description, reverse = false, ind
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.7, ease: EASE_OUT, delay: 0.15 }}
             >
-                <h3 className="text-3xl lg:text-4xl font-medium text-slate-900 mb-6 tracking-tight">
+                <h3 className="text-3xl lg:text-4xl font-medium text-text-primary mb-6 tracking-tight">
                     {title}
                 </h3>
-                <p className="text-slate-600 leading-[1.85] text-base lg:text-[17px]">
+                <p className="text-text-secondary leading-[1.85] text-base lg:text-[17px]">
                     {description}
                 </p>
             </motion.div>

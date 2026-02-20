@@ -29,8 +29,8 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-background-light text-slate-900 font-body antialiased">
-        <NextTopLoader color="#2a5b5b" showSpinner={false} height={3} />
+      <body className="bg-background text-text-primary font-body antialiased">
+        <NextTopLoader color="#5A675B" showSpinner={false} height={3} />
         <Header />
         <main>{children}</main>
         <Footer />

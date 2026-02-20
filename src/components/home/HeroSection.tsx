@@ -45,8 +45,8 @@ export function HeroSection() {
                 <source src="/videos/hero.mp4" type="video/mp4" />
             </video>
 
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black/75" />
+            {/* Soft, clinical-organic overlay */}
+            <div className="absolute inset-0 bg-surface/78" />
 
             {/* Content */}
             <motion.div
@@ -57,14 +57,14 @@ export function HeroSection() {
             >
                 <motion.span
                     variants={fadeUp}
-                    className="uppercase tracking-[0.35em] text-white/70 text-xs sm:text-sm font-medium mb-6"
+                    className="uppercase tracking-[0.35em] text-muted text-xs sm:text-sm font-medium mb-6"
                 >
                     Supplements · AI Wellness · Cosmetics
                 </motion.span>
 
                 <motion.h1
                     variants={fadeUp}
-                    className="font-serif text-4xl sm:text-6xl lg:text-8xl font-light text-white leading-[1.08] tracking-tight"
+                    className="font-serif text-4xl sm:text-6xl lg:text-8xl font-light text-text-primary leading-[1.08] tracking-tight"
                 >
                     Your Body Deserves
                     <br />
@@ -73,7 +73,7 @@ export function HeroSection() {
 
                 <motion.p
                     variants={fadeUp}
-                    className="mt-6 text-base sm:text-lg text-white/75 max-w-2xl leading-relaxed font-light"
+                    className="mt-6 text-base sm:text-lg text-text-secondary max-w-2xl leading-relaxed font-light"
                 >
                     Take our AI-powered quiz to discover exactly what your body needs — then
                     get premium, clinically-backed supplements &amp; cosmetics delivered to your
@@ -86,13 +86,13 @@ export function HeroSection() {
                 >
                     <Link
                         href="/quiz"
-                        className="btn-primary bg-white text-slate-900 px-10 py-4 rounded-full font-semibold text-sm sm:text-base uppercase tracking-wide"
+                        className="btn-primary bg-primary text-white px-10 py-4 rounded-full font-semibold text-sm sm:text-base uppercase tracking-wide hover:bg-primary-hover hover:no-underline"
                     >
                         Take the Quiz
                     </Link>
                     <Link
                         href="/products"
-                        className="btn-secondary border border-white/40 text-white px-10 py-4 rounded-full font-semibold text-sm sm:text-base uppercase tracking-wide"
+                        className="btn-secondary border border-border text-text-primary px-10 py-4 rounded-full font-semibold text-sm sm:text-base uppercase tracking-wide hover:bg-surface-2 hover:no-underline"
                     >
                         Shop All
                     </Link>

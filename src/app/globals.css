@@ -1,21 +1,52 @@
 @import "tailwindcss";
 
+:root {
+  --pn-background: #FAFAF7;
+  --pn-surface: #FFFFFF;
+  --pn-surface-2: #F2F4EF;
+  --pn-border: #E3E7DD;
+  --pn-text-primary: #1F2A24;
+  --pn-text-secondary: #4B5A52;
+  --pn-muted: #6D7C74;
+  --pn-brand-primary: #5A675B;
+  --pn-brand-hover: #4E5B4F;
+  --pn-accent-blue: #2B6CB0;
+  --pn-accent-warm: #C9A86A;
+  --pn-success: #2E7D32;
+  --pn-warning: #B7791F;
+  --pn-error: #B42318;
+}
+
 @theme inline {
-  --color-primary: #2a5b5b;
-  --color-primary-light: #3a7b7b;
-  --color-background-light: #f6f7f7;
-  --color-background-alt: #f2f4f3;
-  --color-background-dark: #151d1d;
+  --color-background: var(--pn-background);
+  --color-surface: var(--pn-surface);
+  --color-surface-2: var(--pn-surface-2);
+  --color-border: var(--pn-border);
+  --color-text-primary: var(--pn-text-primary);
+  --color-text-secondary: var(--pn-text-secondary);
+  --color-muted: var(--pn-muted);
+  --color-primary: var(--pn-brand-primary);
+  --color-primary-hover: var(--pn-brand-hover);
+  --color-accent-blue: var(--pn-accent-blue);
+  --color-accent-warm: var(--pn-accent-warm);
+  --color-success: var(--pn-success);
+  --color-warning: var(--pn-warning);
+  --color-error: var(--pn-error);
+  --color-background-light: var(--pn-background);
+  --color-background-alt: var(--pn-surface-2);
   --font-body: "Inter", sans-serif;
   --font-serif: "Cormorant Garamond", "Georgia", serif;
 }
 
 body {
   font-family: var(--font-body);
+  background-color: var(--pn-background);
+  color: var(--pn-text-secondary);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
+  color: var(--pn-text-primary);
 }
 
 /* Hide scrollbar for carousels */
@@ -43,12 +74,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(42, 91, 91, 0.18);
+  background-color: var(--pn-brand-hover);
+  box-shadow: 0 10px 30px rgba(90, 103, 91, 0.22);
 }
 
 .btn-secondary:hover {
   transform: translateY(-2px);
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: var(--pn-surface-2);
 }
 
 .btn-primary:active,
@@ -68,6 +100,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-icon:active {
   transform: scale(0.96);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--pn-accent-blue) 65%, white);
+  outline-offset: 2px;
 }
 
 /* ─── Prefers reduced motion ─── */

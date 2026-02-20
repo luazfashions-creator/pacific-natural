@@ -26,14 +26,14 @@ const philosophyItems = [
 
 export function Philosophy() {
     return (
-        <section className="py-24 lg:py-32 bg-white">
+        <section className="py-24 lg:py-32 bg-surface">
             <div className="max-w-7xl mx-auto px-6 lg:px-10">
                 {/* Section header */}
                 <SectionReveal className="text-center max-w-2xl mx-auto mb-20">
                     <span className="uppercase tracking-[0.3em] text-primary text-xs font-medium mb-4 block">
                         Our Philosophy
                     </span>
-                    <h2 className="text-4xl lg:text-5xl font-medium text-slate-900 tracking-tight">
+                    <h2 className="text-4xl lg:text-5xl font-medium text-text-primary tracking-tight">
                         What We Stand For
                     </h2>
                 </SectionReveal>

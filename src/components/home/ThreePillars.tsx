@@ -30,13 +30,13 @@ const pillars = [
 
 export function ThreePillars() {
     return (
-        <section id="coaching" className="py-24 lg:py-32 bg-background-alt/50">
+        <section id="coaching" className="py-24 lg:py-32 bg-surface-2/55">
             <div className="max-w-7xl mx-auto px-6 lg:px-10">
                 <SectionReveal className="text-center max-w-2xl mx-auto mb-20">
-                    <h2 className="text-4xl lg:text-5xl font-semibold text-slate-900 mb-6">
+                    <h2 className="text-4xl lg:text-5xl font-semibold text-text-primary mb-6">
                         The Three Pillars of Longevity
                     </h2>
-                    <p className="text-slate-600">
+                    <p className="text-text-secondary">
                         Our holistic ecosystem addresses wellness from every angle: internal biology, personalized
                         guidance, and external resilience.
                     </p>
@@ -46,16 +46,16 @@ export function ThreePillars() {
                     {pillars.map((pillar) => (
                         <StaggerItem
                             key={pillar.title}
-                            className="group bg-white p-8 rounded-xl border border-slate-100 hover:shadow-2xl transition-shadow duration-300"
+                            className="group bg-surface p-8 rounded-xl border border-border hover:shadow-lg transition-shadow duration-300"
                         >
                             <div className="w-16 h-16 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform duration-300">
                                 <Icon name={pillar.icon} className="text-4xl" />
                             </div>
                             <h3 className="text-2xl font-bold mb-4">{pillar.title}</h3>
-                            <p className="text-slate-600 mb-8 leading-relaxed">{pillar.description}</p>
+                            <p className="text-text-secondary mb-8 leading-relaxed">{pillar.description}</p>
                             <Link
                                 href={pillar.href}
-                                className="inline-flex items-center text-primary font-bold gap-2 group-hover:gap-4 transition-all"
+                                className="inline-flex items-center text-accent-blue font-bold gap-2 group-hover:gap-4 hover:underline transition-all"
                             >
                                 {pillar.cta} <Icon name="arrow_forward" />
                             </Link>

@@ -9,7 +9,7 @@ export function Header() {
     const [mobileOpen, setMobileOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-primary/10">
+        <header className="sticky top-0 z-50 bg-surface/95 backdrop-blur-md border-b border-border">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-20 flex items-center justify-between">
                 {/* Logo + Nav */}
                 <div className="flex items-center gap-8 lg:gap-12">
@@ -29,11 +29,7 @@ export function Header() {
 
                     <nav className="hidden md:flex items-center gap-8">
                         {NAV_LINKS.map((link) => (
-                            <Link
-                                key={link.label}
-                                href={link.href}
-                                className="text-sm font-semibold hover:text-primary transition-colors"
-                            >
+                            <Link key={link.label} href={link.href} className="text-sm font-semibold text-text-secondary hover:text-text-primary hover:no-underline transition-colors">
                                 {link.label}
                             </Link>
                         ))}
@@ -46,14 +42,14 @@ export function Header() {
 
                     <Link
                         href="/products"
-                        className="bg-primary text-white px-5 py-2.5 rounded-lg font-bold text-sm tracking-wide hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 hidden sm:block"
+                        className="bg-primary text-white px-5 py-2.5 rounded-lg font-bold text-sm tracking-wide hover:bg-primary-hover hover:no-underline transition-all shadow-md shadow-primary/15 hidden sm:block"
                     >
                         Shop Now
                     </Link>
 
                     <Link
                         href="/checkout"
-                        className="relative w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center"
+                        className="relative w-10 h-10 rounded-full bg-surface-2 border border-border flex items-center justify-center hover:no-underline"
                     >
                         <Icon name="shopping_bag" className="text-primary" />
                         <span className="absolute -top-0.5 -right-0.5 bg-primary text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
@@ -62,10 +58,7 @@ export function Header() {
                     </Link>
 
                     {/* Mobile menu button */}
-                    <button
-                        className="md:hidden p-2 hover:bg-primary/10 rounded-full transition-colors"
-                        onClick={() => setMobileOpen(!mobileOpen)}
-                    >
+                    <button className="md:hidden p-2 hover:bg-surface-2 rounded-full transition-colors" onClick={() => setMobileOpen(!mobileOpen)}>
                         <Icon name={mobileOpen ? 'close' : 'menu'} />
                     </button>
                 </div>
@@ -73,12 +66,12 @@ export function Header() {
 
             {/* Mobile nav */}
             {mobileOpen && (
-                <div className="md:hidden border-t border-primary/10 bg-white px-6 pb-6 pt-4 space-y-4">
+                <div className="md:hidden border-t border-primary/10 bg-surface px-6 pb-6 pt-4 space-y-4">
                     {NAV_LINKS.map((link) => (
                         <Link
                             key={link.label}
                             href={link.href}
-                            className="block text-sm font-semibold hover:text-primary transition-colors py-2"
+                        className="block text-sm font-semibold text-text-secondary hover:text-text-primary hover:no-underline transition-colors py-2"
                             onClick={() => setMobileOpen(false)}
                         >
                             {link.label}
@@ -86,7 +79,7 @@ export function Header() {
                     ))}
                     <Link
                         href="/products"
-                        className="block bg-primary text-white px-5 py-3 rounded-lg font-bold text-sm text-center"
+                        className="block bg-primary text-white px-5 py-3 rounded-lg font-bold text-sm text-center hover:bg-primary-hover hover:no-underline"
                         onClick={() => setMobileOpen(false)}
                     >
                         Shop Now

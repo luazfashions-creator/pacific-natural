@@ -53,7 +53,7 @@ function ProductDetailClient({ product }: { product: ReturnType<typeof getProduc
             <div className="lg:grid lg:grid-cols-12 gap-x-12 items-start mt-8">
                 {/* Left: Image Gallery */}
                 <div className="lg:col-span-7">
-                    <div className="relative aspect-square bg-white rounded-2xl shadow-lg overflow-hidden border border-primary/10">
+                    <div className="relative aspect-square bg-surface rounded-2xl shadow-sm overflow-hidden border border-border">
                         <Image
                             src={product.image}
                             alt={product.name}
@@ -94,11 +94,11 @@ function ProductDetailClient({ product }: { product: ReturnType<typeof getProduc
 
                     <StarRating rating={product.rating} size="md" showCount count={product.reviewCount} />
 
-                    <h1 className="text-4xl font-extrabold text-slate-900 leading-tight">
+                    <h1 className="text-4xl font-extrabold text-text-primary leading-tight">
                         {product.name}
                     </h1>
 
-                    <p className="text-slate-600 leading-relaxed">{product.longDescription}</p>
+                    <p className="text-text-secondary leading-relaxed">{product.longDescription}</p>
 
                     {/* Price section */}
                     <div className="flex items-baseline gap-4">
@@ -106,7 +106,7 @@ function ProductDetailClient({ product }: { product: ReturnType<typeof getProduc
                             {formatPrice(purchaseType === 'subscribe' ? subscribePrice : product.price)}
                         </span>
                         {product.originalPrice && (
-                            <span className="text-lg text-slate-400 line-through">
+                            <span className="text-lg text-muted line-through">
                                 {formatPrice(product.originalPrice)}
                             </span>
                         )}
@@ -118,33 +118,33 @@ function ProductDetailClient({ product }: { product: ReturnType<typeof getProduc
                             onClick={() => setPurchaseType('subscribe')}
                             className={`flex-1 p-4 rounded-xl border-2 transition-all text-left ${purchaseType === 'subscribe'
                                     ? 'border-primary bg-primary/5'
-                                    : 'border-slate-200 hover:border-slate-300'
+                                    : 'border-border hover:border-primary/40'
                                 }`}
                         >
                             <div className="flex items-center gap-3 mb-1">
                                 <Icon name="autorenew" className="text-primary text-xl" />
                                 <span className="font-bold">Subscribe & Save</span>
                             </div>
-                            <p className="text-xs text-slate-500 ml-8">Save 15% on every delivery</p>
+                            <p className="text-xs text-text-secondary ml-8">Save 15% on every delivery</p>
                         </button>
                         <button
                             onClick={() => setPurchaseType('once')}
                             className={`flex-1 p-4 rounded-xl border-2 transition-all text-left ${purchaseType === 'once'
                                     ? 'border-primary bg-primary/5'
-                                    : 'border-slate-200 hover:border-slate-300'
+                                    : 'border-border hover:border-primary/40'
                                 }`}
                         >
                             <div className="flex items-center gap-3 mb-1">
                                 <Icon name="shopping_bag" className="text-primary text-xl" />
                                 <span className="font-bold">One-Time Purchase</span>
                             </div>
-                            <p className="text-xs text-slate-500 ml-8">Standard pricing</p>
+                            <p className="text-xs text-text-secondary ml-8">Standard pricing</p>
                         </button>
                     </div>
 
                     {/* Quantity + Add to Cart */}
                     <div className="flex gap-4">
-                        <div className="flex items-center bg-slate-100 rounded-lg">
+                        <div className="flex items-center bg-surface-2 rounded-lg">
                             <button
                                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
                                 className="w-12 h-12 flex items-center justify-center hover:text-primary transition-colors"
@@ -161,7 +161,7 @@ function ProductDetailClient({ product }: { product: ReturnType<typeof getProduc
                         </div>
                         <Link
                             href="/checkout"
-                            className="flex-1 bg-primary text-white py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-3 hover:bg-primary/90 transition-all shadow-xl shadow-primary/20"
+                            className="flex-1 bg-primary text-white py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-3 hover:bg-primary-hover transition-all shadow-xl shadow-primary/20"
                         >
                             <Icon name="shopping_cart" />
                             Add to Cart
@@ -184,18 +184,18 @@ function ProductDetailClient({ product }: { product: ReturnType<typeof getProduc
 
             {/* Ingredient Highlights */}
             <section className="mt-24">
-                <h2 className="text-3xl font-extrabold text-slate-900 mb-10">Ingredient Highlights</h2>
+                <h2 className="text-3xl font-extrabold text-text-primary mb-10">Ingredient Highlights</h2>
                 <div className="grid md:grid-cols-3 gap-8">
                     {product.ingredients.map((ing) => (
                         <div
                             key={ing.name}
-                            className="p-8 rounded-xl bg-white border border-slate-100 hover:shadow-xl transition-all"
+                            className="p-8 rounded-xl bg-surface border border-border hover:shadow-lg transition-all"
                         >
                             <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
                                 <Icon name={ing.icon} className="text-2xl" />
                             </div>
                             <h3 className="text-lg font-bold mb-2">{ing.name}</h3>
-                            <p className="text-sm text-slate-500 leading-relaxed">{ing.description}</p>
+                            <p className="text-sm text-text-secondary leading-relaxed">{ing.description}</p>
                         </div>
                     ))}
                 </div>
@@ -203,16 +203,16 @@ function ProductDetailClient({ product }: { product: ReturnType<typeof getProduc
 
             {/* Customer Reviews */}
             <section className="mt-24">
-                <h2 className="text-3xl font-extrabold text-slate-900 mb-10">Customer Reviews</h2>
+                <h2 className="text-3xl font-extrabold text-text-primary mb-10">Customer Reviews</h2>
                 <div className="grid lg:grid-cols-12 gap-12">
                     {/* Left: Summary */}
-                    <div className="lg:col-span-4 bg-white p-8 rounded-xl border border-slate-100">
+                    <div className="lg:col-span-4 bg-surface p-8 rounded-xl border border-border">
                         <div className="text-center mb-8">
                             <span className="text-6xl font-extrabold text-primary">{product.rating}</span>
                             <div className="flex justify-center mt-2 mb-2">
                                 <StarRating rating={product.rating} size="md" />
                             </div>
-                            <p className="text-sm text-slate-400">{product.reviewCount} reviews</p>
+                            <p className="text-sm text-muted">{product.reviewCount} reviews</p>
                         </div>
                         {/* Rating bars */}
                         {[5, 4, 3, 2, 1].map((stars) => {
@@ -228,15 +228,15 @@ function ProductDetailClient({ product }: { product: ReturnType<typeof getProduc
                                                 : 1;
                             return (
                                 <div key={stars} className="flex items-center gap-3 mb-2">
-                                    <span className="text-sm text-slate-500 w-3">{stars}</span>
-                                    <Icon name="star" filled className="text-amber-400 text-xs" />
-                                    <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+                                    <span className="text-sm text-text-secondary w-3">{stars}</span>
+                                    <Icon name="star" filled className="text-accent-warm text-xs" />
+                                    <div className="flex-1 h-2 bg-surface-2 rounded-full overflow-hidden">
                                         <div
                                             className="h-full bg-primary rounded-full"
                                             style={{ width: `${pct}%` }}
                                         />
                                     </div>
-                                    <span className="text-xs text-slate-400 w-8">{pct}%</span>
+                                    <span className="text-xs text-muted w-8">{pct}%</span>
                                 </div>
                             );
                         })}
@@ -247,7 +247,7 @@ function ProductDetailClient({ product }: { product: ReturnType<typeof getProduc
                         {product.reviews.map((review) => (
                             <div
                                 key={review.id}
-                                className="p-8 bg-white rounded-xl border border-slate-100"
+                                className="p-8 bg-surface rounded-xl border border-border"
                             >
                                 <div className="flex items-center justify-between mb-2">
                                     <div className="flex items-center gap-3">
@@ -263,8 +263,8 @@ function ProductDetailClient({ product }: { product: ReturnType<typeof getProduc
                                         </Badge>
                                     )}
                                 </div>
-                                <p className="text-slate-600 mb-4 leading-relaxed">{review.content}</p>
-                                <div className="flex justify-between text-sm text-slate-400">
+                                <p className="text-text-secondary mb-4 leading-relaxed">{review.content}</p>
+                                <div className="flex justify-between text-sm text-muted">
                                     <span>{review.author}</span>
                                     <span>{review.date}</span>
                                 </div>
@@ -276,7 +276,7 @@ function ProductDetailClient({ product }: { product: ReturnType<typeof getProduc
 
             {/* Related Products */}
             <section className="mt-24">
-                <h2 className="text-3xl font-extrabold text-slate-900 mb-10">You Might Also Like</h2>
+                <h2 className="text-3xl font-extrabold text-text-primary mb-10">You Might Also Like</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                     {relatedProducts.map((p) => (
                         <ProductCard key={p.id} product={p} variant="compact" />

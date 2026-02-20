@@ -23,9 +23,9 @@ export default function CheckoutPage() {
     const total = subtotal + shipping;
 
     return (
-        <div className="min-h-screen bg-background-light">
+        <div className="min-h-screen bg-background">
             {/* Checkout Header */}
-            <div className="bg-white border-b border-primary/10 py-5">
+            <div className="bg-surface border-b border-primary/10 py-5">
                 <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
                     <Link href="/" className="flex items-center gap-3 text-primary">
                         <svg className="w-6 h-6" fill="none" viewBox="0 0 48 48">
@@ -38,7 +38,7 @@ export default function CheckoutPage() {
                         </svg>
                         <span className="text-lg font-extrabold tracking-tight">Pacific Naturals</span>
                     </Link>
-                    <div className="flex items-center gap-2 text-sm text-slate-500">
+                    <div className="flex items-center gap-2 text-sm text-text-secondary">
                         <Icon name="lock" className="text-primary text-lg" />
                         <span className="font-bold uppercase tracking-widest text-xs">Secure Checkout</span>
                     </div>
@@ -54,20 +54,20 @@ export default function CheckoutPage() {
                                 <div
                                     className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${idx === 0
                                             ? 'bg-primary text-white'
-                                            : 'bg-slate-200 text-slate-400'
+                                            : 'bg-border text-muted'
                                         }`}
                                 >
                                     {idx + 1}
                                 </div>
                                 <span
-                                    className={`text-xs mt-2 font-bold ${idx === 0 ? 'text-primary' : 'text-slate-400'
+                                    className={`text-xs mt-2 font-bold ${idx === 0 ? 'text-primary' : 'text-muted'
                                         }`}
                                 >
                                     {step}
                                 </span>
                             </div>
                             {idx < 2 && (
-                                <div className="flex-1 h-0.5 bg-slate-200 mx-3 mt-[-12px]" />
+                                <div className="flex-1 h-0.5 bg-border mx-3 mt-[-12px]" />
                             )}
                         </div>
                     ))}
@@ -77,47 +77,47 @@ export default function CheckoutPage() {
                     {/* Left Column: Checkout Form */}
                     <div className="lg:col-span-7 space-y-10">
                         {/* Shipping Address */}
-                        <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-100">
+                        <div className="bg-surface rounded-xl p-8 shadow-sm border border-border">
                             <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
                                 <Icon name="local_shipping" className="text-primary" />
                                 Shipping Address
                             </h2>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">
+                                    <label className="block text-xs font-bold uppercase tracking-widest text-text-secondary mb-2">
                                         First Name
                                     </label>
-                                    <input className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+                                    <input className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
                                 </div>
                                 <div>
-                                    <label className="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">
+                                    <label className="block text-xs font-bold uppercase tracking-widest text-text-secondary mb-2">
                                         Last Name
                                     </label>
-                                    <input className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+                                    <input className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
                                 </div>
                                 <div className="sm:col-span-2">
-                                    <label className="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">
+                                    <label className="block text-xs font-bold uppercase tracking-widest text-text-secondary mb-2">
                                         Street Address
                                     </label>
-                                    <input className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+                                    <input className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
                                 </div>
                                 <div>
-                                    <label className="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">
+                                    <label className="block text-xs font-bold uppercase tracking-widest text-text-secondary mb-2">
                                         City
                                     </label>
-                                    <input className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+                                    <input className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
                                 </div>
                                 <div>
-                                    <label className="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">
+                                    <label className="block text-xs font-bold uppercase tracking-widest text-text-secondary mb-2">
                                         Postal Code
                                     </label>
-                                    <input className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+                                    <input className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
                                 </div>
                                 <div className="sm:col-span-2">
-                                    <label className="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">
+                                    <label className="block text-xs font-bold uppercase tracking-widest text-text-secondary mb-2">
                                         Country
                                     </label>
-                                    <select className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white">
+                                    <select className="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-surface">
                                         <option>Germany</option>
                                         <option>Austria</option>
                                         <option>Switzerland</option>
@@ -126,7 +126,7 @@ export default function CheckoutPage() {
                                     </select>
                                 </div>
                             </div>
-                            <button className="mt-8 bg-primary text-white px-8 py-4 rounded-lg font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 w-full flex items-center justify-center gap-2">
+                            <button className="mt-8 bg-primary text-white px-8 py-4 rounded-lg font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/20 w-full flex items-center justify-center gap-2">
                                 Continue to Payment
                                 <Icon name="arrow_forward" />
                             </button>
@@ -139,7 +139,7 @@ export default function CheckoutPage() {
                                 { icon: 'verified', label: 'Money-Back Guarantee' },
                                 { icon: 'local_shipping', label: 'Free Shipping €50+' },
                             ].map((badge) => (
-                                <div key={badge.label} className="flex items-center gap-2 text-slate-400">
+                                <div key={badge.label} className="flex items-center gap-2 text-muted">
                                     <Icon name={badge.icon} className="text-xl" />
                                     <span className="font-bold text-xs uppercase tracking-widest">{badge.label}</span>
                                 </div>
@@ -149,14 +149,14 @@ export default function CheckoutPage() {
 
                     {/* Right Column: Order Summary */}
                     <div className="lg:col-span-5">
-                        <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-100 lg:sticky lg:top-24">
+                        <div className="bg-surface rounded-xl p-8 shadow-sm border border-border lg:sticky lg:top-24">
                             <h2 className="text-xl font-bold mb-6">Order Summary</h2>
 
                             {/* Cart items */}
                             <div className="space-y-6 mb-8">
                                 {cartItems.map((item) => (
                                     <div key={item.product.id} className="flex gap-4">
-                                        <div className="w-20 h-20 rounded-lg overflow-hidden bg-slate-100 flex-shrink-0 relative">
+                                        <div className="w-20 h-20 rounded-lg overflow-hidden bg-surface-2 flex-shrink-0 relative">
                                             <Image
                                                 src={item.product.image}
                                                 alt={item.product.name}
@@ -167,7 +167,7 @@ export default function CheckoutPage() {
                                         </div>
                                         <div className="flex-1 min-w-0">
                                             <h3 className="font-bold text-sm truncate">{item.product.name}</h3>
-                                            <p className="text-xs text-slate-400">Qty: {item.quantity}</p>
+                                            <p className="text-xs text-muted">Qty: {item.quantity}</p>
                                             {item.purchaseType === 'subscribe' && (
                                                 <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">
                                                     Subscribe & Save
@@ -185,18 +185,18 @@ export default function CheckoutPage() {
                                 ))}
                             </div>
 
-                            <div className="border-t border-slate-100 pt-6 space-y-3">
+                            <div className="border-t border-border pt-6 space-y-3">
                                 <div className="flex justify-between text-sm">
-                                    <span className="text-slate-500">Subtotal</span>
+                                    <span className="text-text-secondary">Subtotal</span>
                                     <span className="font-bold">{formatPrice(subtotal)}</span>
                                 </div>
                                 <div className="flex justify-between text-sm">
-                                    <span className="text-slate-500">Shipping</span>
+                                    <span className="text-text-secondary">Shipping</span>
                                     <span className="font-bold text-primary">Free</span>
                                 </div>
                             </div>
 
-                            <div className="border-t border-slate-200 mt-6 pt-6 flex justify-between">
+                            <div className="border-t border-border mt-6 pt-6 flex justify-between">
                                 <span className="text-lg font-bold">Total</span>
                                 <span className="text-2xl font-extrabold text-primary">
                                     {formatPrice(total)}
